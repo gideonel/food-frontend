@@ -129,7 +129,7 @@ const Home = () => {
     <div>
       {/* 🔥 Hero Section */}
       <div className="text-center bg-purple-700 text-white py-16">
-        <h1 className="text-4xl font-bold">🍽️ Welcome to Food Inquiry</h1>
+        <h1 className="text-4xl font-bold">🍽️ Welcome to Miss Ore's Food Inquiry</h1>
         <p className="mt-2 text-lg">Discover delicious recipes & restaurants near you!</p>
       </div>
 
