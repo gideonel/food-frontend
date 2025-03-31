@@ -2,6 +2,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+## live application is at 
+
+https://food-frontend-tau.vercel.app/
+
 First, run the development server:
 
 ```bash
