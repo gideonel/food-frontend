@@ -3,6 +3,7 @@ import { useState } from "react";
 import Popup from "./Popup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFire, faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import Image from 'next/image';
 
 const RecipeCard = ({ recipe }) => {
   const [showPopup, setShowPopup] = useState(false);
