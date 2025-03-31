@@ -1,88 +1,3 @@
-// "use client"
-
-// import { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import Link from 'next/link';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faSearch, faUtensils } from '@fortawesome/free-solid-svg-icons';
-// import RecipeCard from './components/RecipeCard';
-// import LottieAnimation from './components/LottieAnimation';
-
-// const Home = () => {
-//   const [recipes, setRecipes] = useState([]);
-//   const [search, setSearch] = useState('');
-//   const [loading, setLoading] = useState(true);
-  
-//   useEffect(() => {
-//     // axios.get('http://localhost:5000/api/foods')
-//     axios.get("http://localhost:5000/api/recipes")
-//       .then((response) => {
-//         setRecipes(response.data);
-//         setLoading(false);
-//       })
-//       .catch((error) => {
-//         console.error('Error fetching food:', error);
-//         setLoading(false);
-//       });
-//   }, []);
-
-//   const handleSearch = async () => {
-//     if (!search) return;
-
-//     try {
-//       const response = await axios.post('http://localhost:5000/api/restaurants', { location: search });
-//       alert('Search saved successfully!');
-//       setSearch('');
-//     } catch (error) {
-//       console.error('Error saving search:', error.response?.data || error.message);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <div className="text-center bg-purple-700 text-white py-12">
-//         <h1 className="text-3xl font-bold">Welcome to Food Inquiry</h1>
-//         <p className="mt-2 text-lg">Discover delicious recipes and find restaurants near you!</p>
-//       </div>
-
-//       <div className="max-w-lg mx-auto my-8 flex items-center border rounded-lg overflow-hidden shadow-md">
-//         <input
-//           type="text"
-//           placeholder="Search for nearby restaurants..."
-//           className="w-full p-3 outline-none"
-//           value={search}
-//           onChange={(e) => setSearch(e.target.value)}
-//         />
-//         <button onClick={handleSearch} className="bg-purple-700 text-white px-4 py-2">
-//           <FontAwesomeIcon icon={faSearch} />
-//         </button>
-//       </div>
-
-//       <div className="p-8">
-//         <h2 className="text-2xl font-bold mb-4 text-center">
-//           <FontAwesomeIcon icon={faUtensils} className="mr-2" /> Featured Recipes
-//         </h2>
-//         {loading ? (
-//           <LottieAnimation />
-//         ) : (
-//           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-//             {recipes.slice(0, 3).map((recipe) => (
-//               <RecipeCard key={recipe.id} recipe={recipe} />
-//             ))}
-//           </div>
-//         )}
-//         <div className="text-center mt-6">
-//           <Link href="/recipes" className="bg-purple-700 text-white px-6 py-2 rounded-lg shadow-md hover:bg-purple-800">
-//             View More Recipes
-//           </Link>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Home;
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -129,7 +44,7 @@ const Home = () => {
     <div>
       {/* 🔥 Hero Section */}
       <div className="text-center bg-purple-700 text-white py-16">
-        <h1 className="text-4xl font-bold">🍽️ Welcome to Miss Ore's Food Inquiry</h1>
+        <h1 className="text-4xl font-bold">🍽️ Welcome to Miss Ore&quot;s Food Inquiry</h1>
         <p className="mt-2 text-lg">Discover delicious recipes & restaurants near you!</p>
       </div>
 
