@@ -5,8 +5,12 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-const LottieAnimation = dynamic(() => import("../components/LottieAnimation"), { ssr: false });
+// import LottieAnimation from "./components/LottieAnimation";
 
+// Dynamically import the LottieAnimation component with ssr: false to prevent SSR errors
+const LottieAnimation = dynamic(() => import("../components/LottieAnimation"), {
+  ssr: false, // This ensures LottieAnimation is only rendered on the client side
+});
 
 const Login = () => {
   const [email, setEmail] = useState("");

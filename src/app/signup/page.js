@@ -3,7 +3,13 @@ import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import LottieAnimation from "../components/LottieAnimation";
+import dynamic from "next/dynamic";
+// import LottieAnimation from "./components/LottieAnimation";
+
+// Dynamically import the LottieAnimation component with ssr: false to prevent SSR errors
+const LottieAnimation = dynamic(() => import("../components/LottieAnimation"), {
+  ssr: false, // This ensures LottieAnimation is only rendered on the client side
+});
 
 const Signup = () => {
   const [username, setUsername] = useState("");  
