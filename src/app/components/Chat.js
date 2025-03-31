@@ -56,7 +56,7 @@ const Chat = () => {
       {isOpen && (
         <div className="fixed bottom-20 right-6 w-80 bg-white shadow-lg rounded-lg p-4 border">
           <div className="flex justify-between items-center border-b pb-2 mb-2">
-            <h3 className="font-bold">Live Chat</h3>
+            <h3 className="font-bold text-purple-500">Live Chat</h3>
             <button
               onClick={() => setIsOpen(false)}  // Close chat modal
               className="text-gray-500 hover:text-red-500"
@@ -78,7 +78,7 @@ const Chat = () => {
           {/* Chat Input */}
           <input
             type="text"
-            className="p-2 border rounded w-full mt-2"
+            className="p-2 border rounded w-full mt-2 text-gray-500"
             value={message}
             onChange={(e) => setMessage(e.target.value)}  // Handle input change
             placeholder="Type a message"
