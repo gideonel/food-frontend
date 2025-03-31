@@ -10,7 +10,7 @@ const RecipeCard = ({ recipe }) => {
 
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition transform hover:-translate-y-2 p-4">
-      <img
+      <Image
         src={`https://food-backend.blosomtrade.com${recipe.image}`}
         alt={recipe.name}
         className="w-full h-40 object-cover rounded-lg"

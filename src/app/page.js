@@ -49,7 +49,8 @@ const Home = () => {
       </div>
 
       {/* 🔍 Search Bar */}
-      <form onSubmit={handleSearch} className="max-w-lg mx-auto my-8 flex items-center border rounded-lg overflow-hidden shadow-md">
+      <form onSubmit={handleSearch} 
+      className="max-w-lg mx-auto my-8 flex items-center border rounded-lg overflow-hidden shadow-md">
         <input
           type="text"
           placeholder="Search for restaurants..."
@@ -102,16 +103,16 @@ const Home = () => {
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="bg-white shadow-md p-4 rounded-lg">
-            <p className="text-gray-700 italic">&apos;The best food discovery app! Found amazing recipes easily!&apos;</p>
-            <p className="text-sm text-gray-500 mt-2">- Sarah J.</p>
+            <p className="text-gray-700 italic">The best food discovery app! Found amazing recipes easily!</p>
+            <p className="text-sm text-gray-500 mt-2">Sarah J.</p>
           </div>
           <div className="bg-white shadow-md p-4 rounded-lg">
-            <p className="text-gray-700 italic">&apos;Helped me find great restaurants nearby. Highly recommended!&apos;</p>
-            <p className="text-sm text-gray-500 mt-2">- James D.</p>
+            <p className="text-gray-700 italic">Helped me find great restaurants nearby. Highly recommended!</p>
+            <p className="text-sm text-gray-500 mt-2">James D.</p>
           </div>
           <div className="bg-white shadow-md p-4 rounded-lg">
-            <p className="text-gray-700 italic">&apos;Love the easy-to-use search function and beautiful design!&apos;</p>
-            <p className="text-sm text-gray-500 mt-2">- Emily R.</p>
+            <p className="text-gray-700 italic">Love the easy-to-use search function and beautiful design!</p>
+            <p className="text-sm text-gray-500 mt-2">Emily R.</p>
           </div>
         </div>
       </div>

@@ -21,7 +21,8 @@ const Login = () => {
     const token = localStorage.getItem("token");
     if (token) router.replace("/");
   }, 100); // Small delay to prevent blocking
-}, []);
+}, [router]);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();

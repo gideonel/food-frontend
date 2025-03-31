@@ -31,7 +31,7 @@ const Profile = () => {
       <h2 className="text-2xl font-bold mb-4">My Profile</h2>
       {user ? (
         <div>
-          <img src={user.profilePicture} alt="Profile" className="w-32 h-32 rounded-full mx-auto" />
+          <Image src={user.profilePicture} alt="Profile" className="w-32 h-32 rounded-full mx-auto" />
           <h3 className="text-xl font-semibold text-center mt-2">{user.username}</h3>
           <p className="text-center text-gray-600">{user.email}</p>
           <p className="text-center text-gray-600">{user.location}</p>
