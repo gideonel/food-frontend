@@ -1,16 +1,20 @@
 "use client";
-
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import axios from "axios";
 import Header from "../components/Header";
 import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
-import LottieAnimation from "../components/LottieAnimation";
+import Image from "next/image";
+
+// Dynamically import LottieAnimation and disable SSR
+const LottieAnimation = dynamic(() => import("../components/LottieAnimation"), {
+  ssr: false, // Disable SSR for this component
+});
 
 const Restaurants = () => {
   const [query, setQuery] = useState("");
   const [restaurants, setRestaurants] = useState([]);
   const [loading, setLoading] = useState(false);
-
 
   const handleSearch = async () => {
     if (!query) return;
@@ -33,7 +37,7 @@ const Restaurants = () => {
     }
     setLoading(false);
   };
-  
+
   return (
     <div>
       <div className="max-w-3xl mx-auto p-6">
@@ -63,21 +67,29 @@ const Restaurants = () => {
           {restaurants.length === 0 && !loading && <p className="text-center text-gray-500">No restaurants found.</p>}
 
           {loading ? (
-          <LottieAnimation />
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-            {restaurants.map((restaurant) => (
-              <div key={restaurant.id} className="border rounded-lg shadow-md p-4">
-                <h3 className="text-lg font-semibold">{restaurant.name}</h3>
-                <p className="text-gray-600">{restaurant.address}</p>
-                <div className="flex items-center mt-2">
-                  <FaMapMarkerAlt className="text-red-500" />
-                  <p className="ml-2">{restaurant.city}, {restaurant.state}</p>
+            <LottieAnimation />
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+              {restaurants.map((restaurant) => (
+                <div key={restaurant.id} className="border rounded-lg shadow-md p-4">
+                  <Image
+                    src={`https://food-backend.blosomtrade.com${restaurant.image}`}
+                    alt={restaurant.name}
+                    width={300}
+                    height={200}
+                    className="w-full h-40 object-cover rounded-lg"
+                  />
+
+                  <h3 className="text-lg font-semibold mt-4">{restaurant.name}</h3>
+                  <p className="text-gray-600">{restaurant.address}</p>
+                  <div className="flex items-center mt-2">
+                    <FaMapMarkerAlt className="text-red-500" />
+                    <p className="ml-2">{restaurant.city}, {restaurant.state}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

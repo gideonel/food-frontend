@@ -13,6 +13,8 @@ const RecipeCard = ({ recipe }) => {
       <Image
         src={`https://food-backend.blosomtrade.com${recipe.image}`}
         alt={recipe.name}
+        width={300}
+        height={600}
         className="w-full h-40 object-cover rounded-lg"
       />
       <h3 className="text-xl font-bold mt-2 text-gray-500">{recipe.name}</h3>
@@ -26,18 +28,19 @@ const RecipeCard = ({ recipe }) => {
       </p>
 
       {/* Display All Ingredients */}
-      {recipe.ingredients && recipe.ingredients.length > 0 && (
-        <div className="mt-2">
-          <h4 className="font-semibold text-gray-500">Ingredients:</h4>
-          <ul className="text-sm text-gray-700 mt-1">
+        {recipe.ingredients && recipe.ingredients.length > 0 && (
+          <div className="mt-2">
+            <h4 className="font-semibold text-gray-500">Ingredients:</h4>
+            <ul className="text-sm text-gray-700 mt-1">
             {recipe.ingredients.map((ingredient, index) => (
-              <li key={index} className="bg-purple-100 p-1 rounded mt-1">
+              <li key={`${ingredient}-${index}`} className="bg-purple-100 p-1 rounded mt-1">
                 {ingredient}
               </li>
             ))}
-          </ul>
-        </div>
-      )}
+            </ul>
+          </div>
+        )}
+
 
       <button
         onClick={() => setShowPopup(true)}

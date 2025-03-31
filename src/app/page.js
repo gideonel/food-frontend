@@ -1,12 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import axios from "axios";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faUtensils, faFire, faStar } from "@fortawesome/free-solid-svg-icons";
 import RecipeCard from "./components/RecipeCard";
-import LottieAnimation from "./components/LottieAnimation";
+// import LottieAnimation from "./components/LottieAnimation";
+
+// Dynamically import the LottieAnimation component with ssr: false to prevent SSR errors
+const LottieAnimation = dynamic(() => import("./components/LottieAnimation"), {
+  ssr: false, // This ensures LottieAnimation is only rendered on the client side
+});
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
@@ -72,8 +78,8 @@ const Home = () => {
           <LottieAnimation />
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {recipes.slice(0, 3).map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
+            {recipes.slice(0, 3).map((recipe, index) => (
+              <RecipeCard key={recipe.id || `featured-${index}`} recipe={recipe} />
             ))}
           </div>
         )}
@@ -90,9 +96,9 @@ const Home = () => {
           <FontAwesomeIcon icon={faFire} className="mr-2 text-red-500" /> Trending Recipes
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {trendingRecipes.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))}
+        {trendingRecipes.map((recipe, index) => (
+          <RecipeCard key={recipe.id || `trending-${index}`} recipe={recipe} />
+        ))}
         </div>
       </div>
 
