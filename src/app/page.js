@@ -102,15 +102,15 @@ const Home = () => {
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="bg-white shadow-md p-4 rounded-lg">
-            <p className="text-gray-700 italic">"The best food discovery app! Found amazing recipes easily!"</p>
+            <p className="text-gray-700 italic"><quote>The best food discovery app! Found amazing recipes easily!</quote></p>
             <p className="text-sm text-gray-500 mt-2">- Sarah J.</p>
           </div>
           <div className="bg-white shadow-md p-4 rounded-lg">
-            <p className="text-gray-700 italic">"Helped me find great restaurants nearby. Highly recommended!"</p>
+            <p className="text-gray-700 italic"><quote>Helped me find great restaurants nearby. Highly recommended!</quote></p>
             <p className="text-sm text-gray-500 mt-2">- James D.</p>
           </div>
           <div className="bg-white shadow-md p-4 rounded-lg">
-            <p className="text-gray-700 italic">"Love the easy-to-use search function and beautiful design!"</p>
+            <p className="text-gray-700 italic"><quote>Love the easy-to-use search function and beautiful design!</quote></p>
             <p className="text-sm text-gray-500 mt-2">- Emily R.</p>
           </div>
         </div>

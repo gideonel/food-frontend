@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-// import LottieAnimation from "../components/LottieAnimation";
 import dynamic from "next/dynamic";
 const LottieAnimation = dynamic(() => import("../components/LottieAnimation"), { ssr: false });
 
